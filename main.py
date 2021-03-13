@@ -10,14 +10,14 @@ import glob
 
 scanning = False
 
-f = open('log.txt','w')
+f = open('log.txt','w', encoding="utf-8")
 f.write('')
 f.close()
 del f
 
 def log(msg):
     print(msg)
-    f = open('log.txt', 'a')
+    f = open('log.txt', 'a',  encoding="utf-8")
     f.write(msg+"\n")
     f.flush()
     f.close()
