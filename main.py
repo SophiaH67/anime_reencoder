@@ -28,15 +28,7 @@ try:
     if not Path(input_location).exists():
         sys.exit("{} is not a valid folder".format(input_location))
 except IndexError as e:
-    sys.exit("Usage: python main.py <input folder> [<output folder>]")
-
-try:
-    output_location = str(Path(sys.argv[2]))
-    if not Path(output_location).exists():
-        sys.exit("{} is not a valid folder".format(output_location))
-except IndexError as e:
-    log("Output folder not specified, using input folder {}".format(input_location))
-    output_location = input_location
+    sys.exit("Usage: python main.py <input folder>")
 
 for f in glob.glob("./tmp/in/*") + glob.glob("./tmp/out/*"):
     os.remove(f)
@@ -91,8 +83,8 @@ def reencode(video):
 
 def move(video):
     relative_dir = str(video.parents[0])[len(input_location):]
-    os.makedirs(output_location + relative_dir, exist_ok=True)
-    out = "{0}/{1}/{2}".format(output_location, relative_dir, video.name)
+    os.makedirs(input_location + relative_dir, exist_ok=True)
+    out = "{0}/{1}/{2}".format(input_location, relative_dir, video.name)
     if os.path.exists(out):
         os.remove(out)
     shutil.move("./tmp/out/{}".format(video.name), out)
