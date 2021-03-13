@@ -7,7 +7,7 @@ This project reencodes all the anime
 docker run -d -it \
     --name "anime_reencoder" \
     -v /path/to/anime:/app/in \
-    marnixah/anime_reencoder
+    marnixah/anime_reencoder:latest
 ```
 ### docker-compose
 ```bash
