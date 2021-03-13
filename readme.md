@@ -4,7 +4,7 @@ This project reencodes all the anime
 ## Docker
 ### Docker run
 ```bash
-docker run -d \
+docker run -d -it \
     --name "anime_reencoder" \
     -v /path/to/anime:/app/in \
     marnixah/anime_reencoder
