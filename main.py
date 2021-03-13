@@ -10,6 +10,9 @@ import glob
 
 scanning = False
 
+os.makedirs("./tmp/in/", exist_ok=True)
+os.makedirs("./tmp/out/", exist_ok=True)
+
 f = open('log.txt','w', encoding="utf-8")
 f.write('')
 f.close()
