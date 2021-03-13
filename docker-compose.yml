@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  anime-reencoder:
+    build: .
+    volumes:
+      - ./tmp:/app/tmp
+      - /mnt/big/anime:/app/in
