@@ -93,6 +93,6 @@ def move(video):
     shutil.move("./tmp/out/{}".format(video.name), out)
 
 
-while True:
+if __name__ == "__main__":
     scan(input_location)
-    time.sleep(60)
+    sys.exit("All anime in {} is now HEVC".format(input_location))
